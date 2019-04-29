@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="../css/index.css">
+	<script src="../js/index.js" defer></script>
+	<title>Player Head Generator</title>
+</head>
+<body>
+	<header>Player Head Generator</header>
+	<section>
+		<div id="errorBox" class="hidden">
+			<div id="errorMessage">
+				Invalid Username
+			</div>
+		</div>
+		<div id="inputBox">
+			<input type="text" autocomplete="off" autofocus placeholder="Username" spellcheck="false" id="username">
+			<button id="generate">Generate!</button>
+		</div>
+		<div id="outputBox">
+			<label for="give-result">/give result</label>
+			<textarea name="give-result" id="give-result" readonly></textarea>
+			<label for="give-result">Advancement result</label>
+			<textarea id="advancement-result" readonly></textarea>
+			<label for="give-result">NBT result</label>
+			<textarea id="nbt-result" readonly></textarea>
+		</div>
+	</section>
+	<footer><p>By Boomber</p></footer>
+</body>
+</html>

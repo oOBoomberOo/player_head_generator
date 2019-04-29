@@ -1,0 +1,90 @@
+html, head, body {
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	position: relative;
+}
+
+header {
+	width: 100%;
+	height: 10%;
+	top: 0;
+	font-size: 3rem;
+	color: white;
+	background: black;
+	text-align: center;
+}
+
+section {
+	width: 100%;
+	height: 80%;
+}
+
+section #errorBox.hidden {
+	display: none;
+}
+
+section #errorBox {
+	padding-top: 1rem;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	overflow: hidden;
+}
+
+section #errorBox div {
+	border: 1px solid red;
+	background: #ff000099;
+	padding: 0.5rem 1rem;
+}
+
+section #inputBox {
+	width: 100%;
+	padding-top: 1.23rem;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+section #inputBox input {
+	width: 40%;
+	font-size: 1.3rem;
+}
+
+section #outputBox {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+	height: 80%;
+}
+
+section #outputBox label {
+	font-size: 1.1rem;
+}
+
+section #outputBox textarea {
+	width: 80%;
+	height: 50%;
+	font-size: 1.1rem;
+}
+
+footer {
+	width: 100%;
+	height: 10%;
+	bottom: 0;
+	background: black;
+	font-size: 2rem;
+	color: white;
+	text-align: right;
+}
+
+footer p {
+	padding: 0.3rem;
+	margin: 0;
+}
