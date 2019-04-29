@@ -1,10 +1,16 @@
 let inputBox = document.querySelector('#username');
 let inputButton = document.querySelector('#generate');
+let textAreas = document.querySelectorAll('textarea');
 let giveResult = document.getElementById('give-result');
 let advResult = document.getElementById('advancement-result');
 let nbtResult = document.getElementById('nbt-result');
-let errorBox = document.querySelector('#errorBox');
-let errorMessage = errorBox.querySelector('#errorMessage');
+
+for (let textArea of textAreas) {
+	textArea.addEventListener('click', event => {
+		event.target.focus();
+		event.target.select();
+	});
+}
 
 inputButton.addEventListener('click', event => {
 	giveResult.innerText = '';
@@ -28,7 +34,7 @@ async function generatePlayerHead() {
 		}
 	}
 	catch(error) {
-		console.log(error);
+		throw(error);
 	}
 }
 
@@ -45,6 +51,6 @@ function playerHead({name, properties}) {
 	resultString = resultString.replace('{textures}', result.join(', '));
 
 	giveResult.innerHTML = `/give @p player_head${resultString}`;
-	advResult.innerHTML = `icon: {\n   "item": "minecraft:player_head",\n   "nbt": "${resultString}"\n}`;
+	advResult.innerHTML = `"icon": {\n   "item": "minecraft:player_head",\n   "nbt": "${resultString}"\n}`;
 	nbtResult.innerHTML = `${resultString}`;
 }

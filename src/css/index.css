@@ -14,6 +14,9 @@ header {
 	height: 10%;
 	top: 0;
 	font-size: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	color: white;
 	background: black;
 	text-align: center;
@@ -22,25 +25,6 @@ header {
 section {
 	width: 100%;
 	height: 80%;
-}
-
-section #errorBox.hidden {
-	display: none;
-}
-
-section #errorBox {
-	padding-top: 1rem;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	overflow: hidden;
-}
-
-section #errorBox div {
-	border: 1px solid red;
-	background: #ff000099;
-	padding: 0.5rem 1rem;
 }
 
 section #inputBox {
@@ -65,13 +49,15 @@ section #outputBox {
 }
 
 section #outputBox label {
-	font-size: 1.1rem;
+	font-size: 1.2rem;
+	margin: 0.2rem 0;
 }
 
 section #outputBox textarea {
 	width: 80%;
 	height: 50%;
 	font-size: 1.1rem;
+	resize: none;
 }
 
 footer {
@@ -82,9 +68,18 @@ footer {
 	font-size: 2rem;
 	color: white;
 	text-align: right;
+	display: flex;
+	justify-content: flex-end;
+	align-content: center;
+	align-items: center;
 }
 
 footer p {
 	padding: 0.3rem;
 	margin: 0;
+}
+
+footer img {
+	width: auto;
+	height: 50%;
 }
