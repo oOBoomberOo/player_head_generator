@@ -8,6 +8,10 @@
     ],
     "rewrites": [
       {
+        "source": "/minecraft-stat",
+        "destination": "/html/stat.html"
+      },
+      {
         "source": "**",
         "destination": "/html/index.html"
       }
