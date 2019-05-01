@@ -39,8 +39,8 @@ async function generatePlayerHead() {
 }
 
 function playerHead({name, properties}) {
-	const nbtTemplate = `{SkullOwner:{Name: ${name}, Properties: {textures: [{textures}]}}}`;
-	const textureTemplate = `{Value: {texture}}`;
+	const nbtTemplate = `{SkullOwner:{Name: "${name}", Properties: {textures: [{textures}]}}}`;
+	const textureTemplate = `{Value: "{texture}"}`;
 	let result = [];
 	for (let texture of properties) {
 		let data = textureTemplate.replace('{texture}', texture.value);
@@ -49,8 +49,9 @@ function playerHead({name, properties}) {
 
 	let resultString = nbtTemplate;
 	resultString = resultString.replace('{textures}', result.join(', '));
+	let escapedString = resultString.replace(/\"/g,'\\"');
 
-	giveResult.innerHTML = `/give @p player_head${resultString}`;
-	advResult.innerHTML = `"icon": {\n   "item": "minecraft:player_head",\n   "nbt": "${resultString}"\n}`;
-	nbtResult.innerHTML = `${resultString}`;
+	giveResult.innerHTML = `/give @p player_head${escapedString}`;
+	advResult.innerHTML = `"icon": {\n   "item": "minecraft:player_head",\n   "nbt": "${escapedString}"\n}`;
+	nbtResult.innerHTML = `${escapedString}`;
 }
